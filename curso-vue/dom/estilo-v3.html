@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <meta charset="utf-8" />
+    <title></title>
+	<style>
+		.caixas{
+			display: flex;
+			justify-content: space-around;
+		}
+
+		.demo{
+			background-color:red;
+			width:50px;
+			height:50px
+		}
+
+		.c1{
+			background-color:red;
+		}
+
+		.c2{
+			background-color:grey;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<div id="caixas">
+			<div class="demo" :class="estilo" @click="c1 = !c1"></div>
+			<div class="demo"></div>
+			<div class="demo"></div>
+			<p>{{c1}}</p>
+		</div>
+	</div>
+</body>
+	<script>
+	window.onload = function () {
+		new Vue({
+			el: '#app', 
+			data: {
+				c1: true},
+			computed: {
+				estilo(){
+					return {
+						c1 : this.c1,
+						c2 : !this.c1}
+				}
+			},
+			methods: {
+				alertar(){
+					alert('0');
+				}
+			}
+		});
+	}
+</script>
+</html>
