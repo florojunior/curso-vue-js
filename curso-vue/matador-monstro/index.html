@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Matador de monstro</title>
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,400,400i,600&display=swap" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<div class="panel scores">
+			<div class="score">
+				<h1>Jogador</h1>
+				<div class="life-bar">
+					<div class="life"
+						:class="{danger: playerlife < 20}"
+						:style="{width: playerlife+'%'}">						
+					</div>
+					<input v-model="playerlife" type="number"> </input>
+				</div>
+				<div>{{playerlife}}%</div>
+			</div>
+			<div class="score">
+				<h1>Monstro</h1>
+				<div class="life-bar">
+					<div class="life" 
+						:class="{danger: monsterlife < 20}"
+						:style="{width: monsterlife+'%'}">						
+					</div>
+				</div>
+				<input v-model="monsterlife" type="number"> </input>
+				<div>{{monsterlife}}%</div>
+			</div>
+		</div>
+		<div v-if="hasResult" class="panel resul">
+			<p v-if="monsterlife==0" class="win">
+				Você ganhou ;)
+			</p>
+			<p v-else class="lose">
+				Voce perdeu
+			</p>
+		</div>
+		<div class="panel buttons">
+			<template v-if="running">
+				<button class="btn" @click="attack(false)">Ataque</button>
+				<button class="btn" @click="attack(true)">Ataque Especial</button>
+				<button class="btn">Curar</button>
+				<button class="btn" @click="running= false">Desistir</button>
+			</template>
+			<template v-else>
+				<button class="btn" @click="startGame()">Iniciar Jogo</button>
+			</template>
+		</div>
+		<div class="panel logs">4</div>
+	</div>
+</body>
+<script src="app.js"></script>
+</html>
