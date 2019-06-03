@@ -1,7 +1,13 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\curso-vue",
+    "\\curso-vue\\condicionais-e-listas",
+    "\\curso-vue\\condicionais-e-listas\\desafio-05",
+    "\\curso-vue\\dom",
+    "\\curso-vue\\dom\\desafio-03",
+    "\\curso-vue\\dom\\desafio-04"
   ],
-  "SelectedNode": "\\README.md",
+  "SelectedNode": "\\curso-vue\\dom\\desafio-04\\index.html",
   "PreviewInSolutionExplorer": false
 }

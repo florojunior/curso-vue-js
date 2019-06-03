@@ -29,8 +29,8 @@
 <body>
 	<div id="app">
 		<div id="caixas">
-			<div class="demo" :class="estilo" @click="c1 = !c1"></div>
-			<div class="demo" :class="classCss"></div>
+			<div class="demo" :style="{'background-color':red}"></div>
+			<div class="demo"></div>
 			<div class="demo"></div>
 			<p>{{c1}}</p>
 		</div>
@@ -42,15 +42,8 @@
 	window.onload = function () {
 		new Vue({
 			el: '#app', 
-			data: {
-				c1: true,
-				classCss : 'c1'},
+			data: {},
 			computed: {
-				estilo(){
-					return {
-						c1 : this.c1,
-						c2 : !this.c1}
-				}
 			},
 			methods: {
 				alertar(){

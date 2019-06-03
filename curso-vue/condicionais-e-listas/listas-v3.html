@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title></title>
+</head>
+<body>
+	<div id="app">
+		<ul>
+			<li v-for="(cor,indice) in cores">{{cor}} - {{indice}}</li>
+		</ul>
+		<template v-for="(cor,indice) in cores" :key="cor">
+			<p>{{cor}} - {{indice}}</p>
+		</template>
+		<template v-for="pessoa in pessoas">
+			<template v-for="(valor,chave, index) in pessoa">
+				<p>{{chave}} - {{valor}} - {{index}}</p>
+			</template>	
+		</template>
+	</div>
+</body>
+<script>
+	new Vue({
+			el:'#app', data:{cores: ['vermelho','verde','amarelo','azul'],
+							pessoas: [{nome: 'ana', idade: 25, sexo:'masculino'},{nome: 'junior', idade: 28, sexo:'feminino'}]}	
+			});
+</script>
+</html>
