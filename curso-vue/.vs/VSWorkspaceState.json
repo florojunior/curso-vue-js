@@ -1,10 +1,9 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\app-vue-1",
-    "\\dom",
-    "\\dom\\desafio-01\\desafio-01"
+    "\\vue-cli",
+    "\\vue-cli\\componentes",
+    "\\vue-cli\\componentes\\src",
+    "\\vue-cli\\componentes\\src\\components"
   ],
-  "SelectedNode": "\\dom\\estilo-v2.html",
   "PreviewInSolutionExplorer": false
 }
